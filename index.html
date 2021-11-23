@@ -10,16 +10,62 @@
 <header class="row">
     <h1> Welcome to the Thunderdome!</h1>
 </header>
+<!-- Instructions Div-->
 <div class="card" id="instructions">
     <h2>See Here for Instructions:</h2>
+    <h3>Step 1: Click on your Chosen Weapon!</h3>
+    <h3>Step 2: Click the "Fight!" Button!</h3>
+    <h3>Step 3: Repeat!</h3>
     <img class="row" id="instructions" src="img/RPSLS.png">
     <a href="https://www.youtube.com/watch?v=x5Q6-wMx-K8" target="_blank">Click Here for a Video Explanation Of the Game.</a>
     <h3 id="dismiss-instructions" onclick="hideInstructions()">Click Here To Dismiss Instructions</h3>
 </div>
-<section>
-
-
-
+<section class="card" id="game-display">
+    <!-- Weapons Row-->
+    <div class="row">
+        <div class="weapon-div" id="rock">
+            <div class="weapon rock"></div>
+            <h2>Rock</h2>
+        </div>
+        <div class="weapon-div" id="paper">
+            <div class="weapon paper"></div>
+            <h2>Paper</h2>
+        </div>
+        <div class="weapon-div" id="scissors">
+            <div class="weapon scissors"></div>
+            <h2>Scissors</h2>
+        </div>
+        <div class="weapon-div" id="lizard">
+            <div class="weapon lizard"></div>
+            <h2>Lizard</h2>
+        </div>
+        <div class="weapon-div" id="spock">
+            <div class="weapon spock"></div>
+            <h2>Spock</h2>
+        </div>
+        <div class="weapon-div" id="kaiju">
+            <div class="weapon gojira"></div>
+            <h2>Godzilla</h2>
+        </div>
+    </div>
+    <div class="row" id="fight-me">FIGHT!</div>
+    <!-- Game Main Display-->
+    <div class="row">
+        <div class="card">
+            <div class="user" id="player">Player</div>
+            <div class="score" id="player-score"></div>
+        </div>
+        <!--<div class="user" id="versus"></div>-->
+        <div class="row" id="ring">
+            <div class="throw" id="player-throw"></div>
+            <div id="vstxt">VS</div>
+            <div class="throw" id="computer-throw"></div>
+        </div>
+        <div class="card">
+            <div class="user" id="computer">Computer</div>
+            <div class="score" id="computer-score"></div>
+        </div>
+    </div>
 </section>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="rps.js"></script>
