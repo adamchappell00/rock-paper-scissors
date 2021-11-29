@@ -111,7 +111,6 @@ $('#fight-me').click(function(){
     }
 });
 function updateResult(){
-
     $('#player-score').html(playerScore);
     $('#computer-score').html(computerScore);
 }
@@ -189,4 +188,34 @@ function fightRoll(str) {
         }
     }
     updateResult();
+}
+
+/* Konami Code Insert, Does not render or display anything on success or during attempt, but retains function
+* Function will allow the Godzilla Weapon: Default is that Godzilla is not displayed, will display if Konami Code
+* successfully passed. Godzilla wins all RPSLS fights. */
+const konami = [38,38,40,40,37,39,37,39,66,65,13];
+var inputKeys = [];
+$(document).keyup(function(event){
+    console.log(event.keyCode);
+});
+$(document).keyup(function(event) {
+    inputKeys.push(event.keyCode);
+    if(inputKeys.length === 11){
+        checkKonami();
+    }
+    console.log(inputKeys);
+});
+function checkKonami(){
+    var soFarSoGood = true;
+    for(var k = 0; k < 11; k++){
+        if(inputKeys[k] !== konami[k]){
+            soFarSoGood = false;
+        }
+    }
+    if(soFarSoGood){
+        alert("You have unlocked Gojira!!!");
+        $('#kaiju').css('display','block');
+    } else {
+        inputKeys = [];
+    }
 }
