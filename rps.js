@@ -74,6 +74,7 @@ $('#fight-me').click(function(){
     var intervalId = setInterval(function () {
         if (count >= max) {
             clearInterval(intervalId);
+            fightRoll(randomWpn);
         } else {
             var randomNum = Math.floor(Math.random() * 5);
             switch (randomNum){
@@ -105,9 +106,7 @@ $('#fight-me').click(function(){
         alert("Silly Player, Select Your Weapon First! I guess you have to use stick instead!");
         userWeapon = "Stick";
         $('#player-throw').css('background-image',"url('/img/stick.png')");
-        fightRoll(randomWpn);
-    }else{
-        fightRoll(randomWpn);
+
     }
 });
 function updateResult(){
